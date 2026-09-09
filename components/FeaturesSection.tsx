@@ -1,0 +1,94 @@
+type Feature = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  graphic?: "cable" | "sim";
+};
+
+const topFeatures: Feature[] = [
+  {
+    eyebrow: "01 // ELIMINACIÓN",
+    title: "Eliminación al detectar un cable de datos",
+    description:
+      "Al detectar una conexión no autorizada por cable, NOVA bloquea la transferencia de datos, elimina los permisos de acceso y restaura tu dispositivo de fábrica antes de que se filtre información.",
+    graphic: "cable",
+  },
+  {
+    eyebrow: "02 // ELIMINACIÓN",
+    title: "Eliminación cuando manipulan la eSIM o SIM",
+    description:
+      "Protege tu dispositivo evitando que accedan a tu eSIM o manipulando la SIM física",
+    graphic: "sim",
+  },
+];
+
+const bottomFeatures: Feature[] = [
+  {
+    eyebrow: "03 // ELIMINACIÓN",
+    title: "Elimina por combinación de subir y bajar volumen",
+    description:
+      "Mantén presionados volumen + y - durante 5 segundos para iniciar el borrado total de tu dispositivo, sin marcha atrás.",
+  },
+  {
+    eyebrow: "04 // PRIVACIDAD",
+    title: "Bloquea capturas de pantalla y grabaciones",
+    description:
+      "Cualquier intento de captura o grabación de pantalla se bloquea al instante, generando una imagen en blanco sin contenido visible.",
+  },
+  {
+    eyebrow: "05 // PRIVACIDAD",
+    title: "Desactiva la cámara y micrófono de tu dispositivo",
+    description:
+      "Al activarla, ninguna app puede acceder a tu cámara ni micrófono. Si algo lo intenta, NOVA lo bloquea de inmediato y te notifica.",
+  },
+];
+
+function FeatureTitle({ eyebrow, title }: Pick<Feature, "eyebrow" | "title">) {
+  return (
+    <div className="flex flex-col gap-2">
+      <p className="text-gradient-brand text-xs font-semibold">{eyebrow}</p>
+      <h3 className="font-heading text-xl leading-snug text-[#312A41] sm:text-2xl">{title}</h3>
+    </div>
+  );
+}
+
+export default function FeaturesSection() {
+  return (
+    <section id="funciones" className="mx-auto max-w-[1440px] px-4 pt-24 sm:px-6 lg:px-[170px] lg:pt-32">
+      <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.43fr_1fr]">
+          <div className="relative overflow-hidden rounded-3xl bg-white p-8 lg:pr-[200px]">
+            <div className="flex max-w-[401px] flex-col gap-6">
+              <FeatureTitle eyebrow={topFeatures[0].eyebrow} title={topFeatures[0].title} />
+              <p className="text-sm leading-relaxed text-[#312A41]">{topFeatures[0].description}</p>
+            </div>
+            <div
+              className="absolute -right-10 -top-4 hidden h-[275px] w-[275px] rounded-sm bg-linear-to-br from-[#12187E] to-[#4A5FE7] lg:block"
+              aria-hidden
+            />
+          </div>
+
+          <div className="relative overflow-hidden rounded-3xl bg-white p-8 lg:pr-[150px]">
+            <div className="flex max-w-[261px] flex-col gap-6">
+              <FeatureTitle eyebrow={topFeatures[1].eyebrow} title={topFeatures[1].title} />
+              <p className="text-sm leading-relaxed text-[#312A41]">{topFeatures[1].description}</p>
+            </div>
+            <div
+              className="absolute -right-6 top-6 hidden h-[155px] w-[138px] rounded-xl bg-[radial-gradient(circle,#8D3DFF,#552A7B)] lg:block"
+              aria-hidden
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {bottomFeatures.map((feature) => (
+            <div key={feature.title} className="flex flex-col gap-6 rounded-3xl bg-white p-8">
+              <FeatureTitle eyebrow={feature.eyebrow} title={feature.title} />
+              <p className="text-sm leading-relaxed text-[#312A41]">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

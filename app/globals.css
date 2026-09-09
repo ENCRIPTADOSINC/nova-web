@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: var(--font-cal-sans), var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+
+  --color-bg: #f6f8fc;
+  --color-heading: #310b7f;
+  --color-body: #352b4b;
+  --color-navy: #0b0641;
+  --color-green: #69ec72;
+  --color-chip: #e5e9fe;
+  --color-border-muted: #cfd4dd;
+  --color-brand-from: #a71fe8;
+  --color-brand-to: #4f24d8;
+  --color-logo-from: #4238ff;
+  --color-logo-to: #cc35ff;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-body);
+}
+
+@layer components {
+  .text-gradient-brand {
+    background-image: linear-gradient(90deg, var(--color-brand-from), var(--color-brand-to));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-brand {
+    background-image: linear-gradient(90deg, var(--color-brand-from), var(--color-brand-to));
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 font-semibold text-white transition-opacity hover:opacity-90;
+    background-image: linear-gradient(90deg, var(--color-brand-from), var(--color-brand-to));
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-3 rounded-full border-2 px-8 py-4 font-semibold transition-colors;
+    border-image: linear-gradient(90deg, #7922e0, #6622f3) 1;
+    color: #421ef2;
+  }
+}
