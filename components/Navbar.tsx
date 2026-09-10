@@ -43,9 +43,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link href="#precios" className="btn-primary !px-4 text-sm sm:!px-8 sm:text-base">
+        <Link
+          href="#precios"
+          className="btn-primary !min-h-[40px] !px-5 text-sm sm:!min-h-[51px] sm:!px-8 sm:text-base"
+        >
           <span className="hidden sm:inline">Conseguir Nova</span>
-          <span className="sm:hidden">comprar</span>
+          <span className="sm:hidden">Comprar</span>
         </Link>
       </nav>
 

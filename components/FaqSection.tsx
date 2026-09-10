@@ -26,7 +26,8 @@ function FaqItem({ question, open, onToggle }: { question: string; open: boolean
         <span className="text-base text-[#626262]">{question}</span>
         <Plus
           size={18}
-          className={`shrink-0 text-[#081C59] transition-transform ${open ? "rotate-45" : ""}`}
+          strokeWidth={2.75}
+          className={`shrink-0 text-navy transition-transform ${open ? "rotate-45" : ""}`}
         />
       </button>
       {open && (

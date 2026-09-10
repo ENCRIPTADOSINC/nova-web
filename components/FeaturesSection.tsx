@@ -83,7 +83,7 @@ export default function FeaturesSection() {
               width={208}
               height={208}
               aria-hidden
-              className="pointer-events-none absolute -right-2 -top-6 hidden w-[230px] select-none lg:block"
+              className="pointer-events-none absolute right-0 top-0 w-[130px] select-none lg:-right-2 lg:-top-6 lg:w-[230px]"
             />
           </div>
 
@@ -98,7 +98,7 @@ export default function FeaturesSection() {
               width={119}
               height={148}
               aria-hidden
-              className="pointer-events-none absolute right-0 top-7 hidden w-[125px] select-none lg:block"
+              className="pointer-events-none absolute right-0 top-0 w-[92px] select-none lg:top-7 lg:w-[125px]"
             />
           </div>
         </div>

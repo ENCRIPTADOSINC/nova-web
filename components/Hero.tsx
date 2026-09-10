@@ -8,11 +8,13 @@ export default function Hero() {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-4">
             <h1
-              className="font-heading text-[48px] font-normal leading-[1] tracking-normal text-heading"
+              className="font-heading text-[35px] font-normal leading-[1.05] tracking-normal text-heading sm:text-[48px] sm:leading-[1]"
               style={{ WebkitTextStroke: "0.9px currentColor", paintOrder: "stroke fill" }}
             >
               Confidencialidad que{" "}
-              <span className="font-accent text-[58px] leading-none text-[#CA29FF]">no depende</span>{" "}
+              <span className="font-accent text-[42px] leading-none text-[#CA29FF] sm:text-[58px]">
+                no depende
+              </span>{" "}
               de la suerte.
             </h1>
             <p className="max-w-[575px] text-base leading-[1.4] text-body">
