@@ -17,8 +17,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sticky top-4 z-50 mx-auto max-w-[1164px] px-4 sm:px-6 lg:px-0">
-      <nav className="flex items-center justify-between rounded-[20px] bg-white px-4 py-4 shadow-[0_0_48px_rgba(6,28,61,0.05)] sm:px-6 lg:px-[26px]">
+    <div className="sticky top-8 z-50 mx-auto max-w-[1164px] px-4 sm:px-6 lg:px-0">
+      <nav className="flex items-center justify-between rounded-[20px] bg-white px-4 py-4 shadow-[0_0_48px_rgba(6,28,61,0.05)] sm:px-6 lg:h-[74px] lg:px-[26px] lg:py-0">
         <button
           className="flex h-6 w-6 items-center justify-center text-[#6923DD] lg:hidden"
           onClick={() => setOpen((v) => !v)}
@@ -43,7 +43,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <Link href="#precios" className="btn-primary !px-4 !py-2.5 text-sm sm:!px-8 sm:!py-4 sm:text-base">
+        <Link href="#precios" className="btn-primary !px-4 text-sm sm:!px-8 sm:text-base">
           <span className="hidden sm:inline">Conseguir Nova</span>
           <span className="sm:hidden">comprar</span>
         </Link>

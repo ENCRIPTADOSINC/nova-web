@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Feature = {
   eyebrow: string;
   title: string;
@@ -46,8 +48,21 @@ const bottomFeatures: Feature[] = [
 function FeatureTitle({ eyebrow, title }: Pick<Feature, "eyebrow" | "title">) {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-gradient-brand text-xs font-semibold">{eyebrow}</p>
-      <h3 className="font-heading text-xl leading-snug text-[#312A41] sm:text-2xl">{title}</h3>
+      <p
+        className="text-gradient-brand text-[12px] font-semibold leading-[1.2]"
+        style={{
+          letterSpacing: "0.1em",
+          backgroundImage: "linear-gradient(93.33deg, #A71FE8 5.8%, #4F24D8 100%)",
+        }}
+      >
+        {eyebrow}
+      </p>
+      <h3
+        className="font-heading text-[20px] font-normal leading-[1.3] tracking-normal text-[#312A41]"
+        style={{ WebkitTextStroke: "0.6px currentColor", paintOrder: "stroke fill" }}
+      >
+        {title}
+      </h3>
     </div>
   );
 }
@@ -60,22 +75,30 @@ export default function FeaturesSection() {
           <div className="relative overflow-hidden rounded-3xl bg-white p-8 lg:pr-[200px]">
             <div className="flex max-w-[401px] flex-col gap-6">
               <FeatureTitle eyebrow={topFeatures[0].eyebrow} title={topFeatures[0].title} />
-              <p className="text-sm leading-relaxed text-[#312A41]">{topFeatures[0].description}</p>
+              <p className="text-[14px] leading-[1.3] text-[#312A41]">{topFeatures[0].description}</p>
             </div>
-            <div
-              className="absolute -right-10 -top-4 hidden h-[275px] w-[275px] rounded-sm bg-linear-to-br from-[#12187E] to-[#4A5FE7] lg:block"
+            <Image
+              src="/svg/cable.svg"
+              alt=""
+              width={208}
+              height={208}
               aria-hidden
+              className="pointer-events-none absolute -right-2 -top-6 hidden w-[230px] select-none lg:block"
             />
           </div>
 
           <div className="relative overflow-hidden rounded-3xl bg-white p-8 lg:pr-[150px]">
             <div className="flex max-w-[261px] flex-col gap-6">
               <FeatureTitle eyebrow={topFeatures[1].eyebrow} title={topFeatures[1].title} />
-              <p className="text-sm leading-relaxed text-[#312A41]">{topFeatures[1].description}</p>
+              <p className="text-[14px] leading-[1.3] text-[#312A41]">{topFeatures[1].description}</p>
             </div>
-            <div
-              className="absolute -right-6 top-6 hidden h-[155px] w-[138px] rounded-xl bg-[radial-gradient(circle,#8D3DFF,#552A7B)] lg:block"
+            <Image
+              src="/svg/esim-sim.svg"
+              alt=""
+              width={119}
+              height={148}
               aria-hidden
+              className="pointer-events-none absolute right-0 top-7 hidden w-[125px] select-none lg:block"
             />
           </div>
         </div>
@@ -84,7 +107,7 @@ export default function FeaturesSection() {
           {bottomFeatures.map((feature) => (
             <div key={feature.title} className="flex flex-col gap-6 rounded-3xl bg-white p-8">
               <FeatureTitle eyebrow={feature.eyebrow} title={feature.title} />
-              <p className="text-sm leading-relaxed text-[#312A41]">{feature.description}</p>
+              <p className="text-[14px] leading-[1.3] text-[#312A41]">{feature.description}</p>
             </div>
           ))}
         </div>

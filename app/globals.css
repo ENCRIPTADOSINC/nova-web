@@ -2,6 +2,7 @@
 
 @theme inline {
   --font-heading: var(--font-cal-sans), var(--font-inter), sans-serif;
+  --font-accent: var(--font-covered), cursive;
   --font-sans: var(--font-inter), sans-serif;
 
   --color-bg: #f6f8fc;
@@ -35,13 +36,13 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 font-semibold text-white transition-opacity hover:opacity-90;
+    @apply inline-flex min-h-[51px] items-center justify-center gap-3 rounded-full px-8 py-2 font-semibold leading-tight text-white transition-opacity hover:opacity-90;
     background-image: linear-gradient(90deg, var(--color-brand-from), var(--color-brand-to));
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-3 rounded-full border-2 px-8 py-4 font-semibold transition-colors;
-    border-image: linear-gradient(90deg, #7922e0, #6622f3) 1;
+    @apply inline-flex min-h-[51px] items-center justify-center gap-3 rounded-full border-2 px-8 py-2 font-semibold leading-tight transition-colors;
+    border-color: #6622f3;
     color: #421ef2;
   }
 }

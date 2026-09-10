@@ -1,13 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Lock } from "lucide-react";
 
 export default function CtaBanner() {
   return (
     <section className="mx-auto max-w-[1440px] px-4 pt-24 sm:px-6 lg:px-[170px] lg:pt-32">
-      <div className="relative flex flex-col items-center gap-10 overflow-hidden rounded-[32px] bg-linear-to-br from-[#201349] to-[#6423DC] px-6 py-10 text-center sm:px-14 sm:py-14">
-        <div
-          className="pointer-events-none absolute -left-1/4 -top-1/2 h-[80%] w-[150%] rounded-full bg-linear-to-br from-[#4238FF] to-[#CC35FF] opacity-30 blur-3xl"
+      <div
+        className="relative flex flex-col items-center gap-10 overflow-hidden rounded-[32px] px-6 py-10 text-center sm:px-14 sm:py-14"
+        style={{ background: "linear-gradient(130.99deg, #201349 5.34%, #6423DC 101.84%)" }}
+      >
+        <Image
+          src="/svg/banner-protege.svg"
+          alt=""
+          width={467}
+          height={313}
           aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 h-full w-auto select-none"
         />
 
         <div className="relative flex max-w-[988px] flex-col items-center gap-4">
@@ -19,7 +27,7 @@ export default function CtaBanner() {
 
         <Link
           href="#precios"
-          className="relative inline-flex items-center justify-center rounded-full bg-green px-8 py-6 font-semibold text-[#312A41] transition-opacity hover:opacity-90 sm:py-4"
+          className="relative inline-flex min-h-[51px] items-center justify-center rounded-full bg-green px-8 py-2 font-semibold leading-tight text-[#312A41] transition-opacity hover:opacity-90"
         >
           Solicitar acceso
         </Link>

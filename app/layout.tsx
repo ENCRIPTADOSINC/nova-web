@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Covered_By_Your_Grace } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const coveredByYourGrace = Covered_By_Your_Grace({
+  variable: "--font-covered",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const calSans = localFont({
@@ -23,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${inter.variable} ${calSans.variable}`}>
+    <html lang="es" className={`${inter.variable} ${calSans.variable} ${coveredByYourGrace.variable}`}>
       <body className="min-h-full bg-bg font-sans text-body antialiased">
         {children}
       </body>

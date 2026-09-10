@@ -46,7 +46,12 @@ export default function FaqSection() {
   return (
     <section id="faqs" className="mx-auto max-w-[1440px] px-4 pt-24 sm:px-6 lg:px-[170px] lg:pt-32">
       <div className="flex flex-col items-center gap-10">
-        <h2 className="font-heading text-2xl text-heading sm:text-[32px]">¿Tienes dudas de nova?</h2>
+        <h2
+          className="font-heading text-2xl text-heading sm:text-[32px]"
+          style={{ WebkitTextStroke: "0.7px currentColor", paintOrder: "stroke fill" }}
+        >
+          ¿Tienes dudas de nova?
+        </h2>
 
         <div className="grid w-full grid-cols-1 gap-x-8 lg:grid-cols-2">
           {columns.map((column, colIndex) => (
